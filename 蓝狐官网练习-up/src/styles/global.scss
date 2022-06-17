@@ -1,0 +1,32 @@
+body {
+  color: rgb(59, 59, 59);
+  margin: 0px;
+  padding: 0px;
+  font: 12px / 1.5 微软雅黑, 宋体, Arial, sans-serif;
+}
+img {
+  @apply align-top border-0;
+}
+i,
+em {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.cw {
+  @apply w-[1200px] mx-auto;
+}
+
+.lazy__img[lazy="loading"] {
+  padding: 5em 0;
+  width: 48px;
+}
+
+.lazy__img[lazy="loaded"] {
+  width: 100%;
+}
+
+.lazy__img[lazy="error"] {
+  padding: 5em 0;
+  width: 48px;
+}
