@@ -1,0 +1,83 @@
+<template>
+  <div
+    class="bg-blue-300 h-56 max-h-96 rounded-md hover:shadow-xl relative bg-cover"
+    @click="tuij(prpos.data)"
+  >
+    <div class="absolute p-4 z-20 h-full w-full justify-between flex flex-col">
+      <div class="flex self-end">
+        <button
+          class="p-2 outline-none backdrop-blur-[3px] bg-gray-800/30 w-12 h-12 justify-center items-center flex rounded-xl border-gray-400/50 border hover:shadow-xl"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8 text-white"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="p-4 rounded-sm w-full hover:shadow-xl bg-slate-900 bg-opacity-30 self-end border-gray-400/50 border"
+      >
+        <h1
+          class="text-slate-100 font-bold text-2xl mb-10 cursor-pointer whitespace-nowrap overflow-hidden text-ellipsis"
+        >
+          {{ data.title }}
+        </h1>
+        <div class="flex justify-between">
+          <h3
+            class="text-slate-100 font-bold text-lg capitalize cursor-pointer"
+          >
+            {{ data.userName }}
+          </h3>
+          <span class="text-slate-100 text-sm font-black capitalize">{{
+            data.shiJian
+          }}</span>
+        </div>
+      </div>
+    </div>
+    <div
+      :style="{ backgroundImage: `url(${data.imgUrl})` }"
+      class="w-full h-full bg-cover absolute top-0 left-0 blur-sm -z-1"
+    ></div>
+    <div class="w-full h-5/6 overflow-hidden p-2 absolute top-0 left-0">
+      <div class="h-full shadow-md shadow-slate-900 overflow-hidden">
+        <img class="object-cover rounded-sm" :src="props.data.imgUrl" />
+      </div>
+      <div class="w-full flex-1"></div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import router from "@/router";
+
+interface tData {
+  title: string;
+  userName: string;
+  shiJian: string;
+  imgUrl: string;
+  lujing?: string;
+}
+
+interface Props1 {
+  data: tData;
+}
+
+// const props = withDefaults(defineProps(), {
+//   data,
+// });
+
+// props.data
+// const props = defineProps<Props1>({
+//   data,
+// });
+
+const tuij = (tData: tData) => {
+  router.push({ name: tData.lujing });
+};
+</script>
+
+<style lang="scss" scoped></style>

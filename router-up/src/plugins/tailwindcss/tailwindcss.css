@@ -1,0 +1,5 @@
+/* tailwindcss 里面有代码初始化 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

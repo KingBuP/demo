@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    //"allowSyntheticDefaultImports": true, //设置path
+    "baseUrl": ".",
+    //配置入口文件路径
+    "paths": {
+      "@/*": ["./src/*"],
+      "#/*": ["./types/*"],
+      "@c/*": ["./src/components/*"]
+    },
+    "types": ["element-plus/global", "echarts", "lodash"]
+  },
+  //文件所有用到的文件都注册一下
+  "include": [
+    "vite/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts",
+    "mock/**/*.ts",
+    "types/**/*.ts",
+    "types/**/*.d.ts"
+  ]
+}
