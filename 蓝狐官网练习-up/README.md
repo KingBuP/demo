@@ -5,4 +5,4 @@
 语言：ts
 
 # 使用插件：
-tailwindcss，elementUI-plus
+tailwindcss，elementUI-plus,lodash,sass
