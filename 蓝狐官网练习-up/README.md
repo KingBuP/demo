@@ -4,3 +4,5 @@
 框架：vue3
 语言：ts
 
+# 使用插件：
+tailwindcss，elementUI-plus
